@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "/dogs/:id" => "dogs#show"
   post "/dogs" => "dogs#create"
   post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
 end

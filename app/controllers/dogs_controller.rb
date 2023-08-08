@@ -10,11 +10,16 @@ class DogsController < ApplicationController
   end
 
   def create
+    if current_user
     @dog = Dog.new(name: params[:name],
       age: params[:age],
       breed: params[:breed]
     )
     @dog.save
-    render :show
+  else
+    render json: {message: "need to be logged in to create dog"}
+  end
+  
+    
   end
 end
